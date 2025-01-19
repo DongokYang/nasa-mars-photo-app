@@ -68,7 +68,7 @@ def display_photos(photos):
 def Curiosity():
     print("Curiosity rover is selected")
     selectedRover = 'curiosity'
-    date = input("select the date in the following format (xxxx-xx-xx)")
+    date = input("select the date in the following format (YYYY-MM-DD)")
     url_rovers = f"https://api.nasa.gov/mars-photos/api/v1/rovers/{selectedRover}/photos?earth_date={date}&api_key={API_KEY}"
     all_rovers = get(url_rovers).json()
 
