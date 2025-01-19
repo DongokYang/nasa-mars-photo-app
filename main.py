@@ -3,15 +3,20 @@ Name : Dongok Yang
 Date : 2025-01-17
 Class : ADEV-3005(261246)
 '''
+# Import required libraries
 from requests import get
 import json
 from PIL import Image
 from io import BytesIO
 from menu import Menu
 
+# API key for accessing NASA photos
 API_KEY = 'luqFf5EMzwZ3CWeUziGQJLyP1mEFfmefVtRuJgFh'
+
+# Variable to keep the current image page
 current_image = 1
 
+# display an image
 def display_photo(url):
  """Displays the photo found at url."""
  img_resp = get(url)
@@ -19,6 +24,7 @@ def display_photo(url):
  img.show()
  img.close()
 
+# Display photos with navigation options
 def display_photos(photos):
     global current_image
 
@@ -64,7 +70,7 @@ def display_photos(photos):
         return True
 
 
-
+# Function for Curiosity rover
 def Curiosity():
     print("Curiosity rover is selected")
     selectedRover = 'curiosity'
@@ -79,6 +85,7 @@ def Curiosity():
     else:
         print("No photos found for this date.")
 
+# Function for Opportunity rover
 def Opportunity():
     print("Opportunity rover is selected")
     selectedRover = 'opportunity'
@@ -92,6 +99,7 @@ def Opportunity():
     else:
         print("No photos found for this date.")
 
+# Function for Spirit rover
 def Spirit():
     print("Spirit rover is selected")
     selectedRover = 'spirit'
@@ -105,6 +113,7 @@ def Spirit():
     else:
         print("No photos found for this date.")
 
+# Main menu with rover options
 main_menu = Menu(
     title="Main Menu",
     options=[
